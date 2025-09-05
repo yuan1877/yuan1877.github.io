@@ -6,79 +6,57 @@
   <title>袁 · 个人主页</title>
   <style>
     :root {
-      --bg1: #0f2027;
-      --bg2: #203a43;
-      --bg3: #2c5364;
-      --text: #f0f4f8;
-      --accent: #4dd0e1;
-      --card: rgba(255,255,255,0.08);
-      --radius: 14px;
-      --shadow: 0 8px 20px rgba(0,0,0,0.4);
+      --bg1:#141E30; --bg2:#243B55; --accent:#00c6ff; --text:#f0f4f8;
+      --card:rgba(255,255,255,0.08); --shadow:0 8px 20px rgba(0,0,0,0.4);
+      --radius:14px;
     }
-    * {box-sizing:border-box;margin:0;padding:0}
-    body {
-      font-family: "Segoe UI", "PingFang SC", sans-serif;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      position: sticky; top:0; background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
-      padding: 12px 24px; display:flex; justify-content:space-between; align-items:center;
-      z-index:1000;
-    }
-    header .logo { font-weight: bold; font-size: 20px; color: var(--accent); }
-    nav { display:flex; gap:20px; }
-    nav a { color:var(--text); text-decoration:none; transition:.3s; }
-    nav a:hover { color:var(--accent); }
-    .menu-btn { display:none; font-size:22px; background:none; border:0; color:var(--text); }
-    main { padding:60px 20px; }
-    section { margin-bottom:80px; animation: fadeIn 1s ease forwards; }
-    h1,h2,h3 { margin-bottom:16px; }
-    .hero { text-align:center; padding:80px 20px; }
-    .hero h1 { font-size:42px; margin-bottom:10px; color: var(--accent); }
-    .hero p { color:#cfd8dc; margin-bottom:20px; }
-    .btn {
-      display:inline-block; margin:6px; padding:12px 20px;
-      border-radius:var(--radius); border:1px solid var(--accent);
-      color:var(--accent); background:transparent; transition:.3s;
-    }
-    .btn.primary { background:var(--accent); color:#002b36; border:0; }
-    .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-    .grid {
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;
-    }
-    .card {
-      background:var(--card); padding:20px; border-radius:var(--radius); box-shadow: var(--shadow);
-      transition:.3s;
-    }
-    .card:hover { transform:translateY(-4px); }
-    footer {
-      padding:20px; text-align:center; background:rgba(0,0,0,0.4);
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    form { display:grid; gap:12px; max-width:500px; margin:auto; }
-    input,textarea {
-      width:100%; padding:10px; border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,0.2); background:rgba(0,0,0,0.3);
-      color:var(--text);
-    }
-    button[type=submit] { cursor:pointer }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:"Segoe UI","PingFang SC",sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text);line-height:1.6;}
+    header{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 24px;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);z-index:1000;transition:.3s;}
+    header.scrolled{background:rgba(0,0,0,0.85);}
+    .logo{font-weight:bold;font-size:20px;color:var(--accent);}
+    nav{display:flex;gap:20px;}
+    nav a{color:var(--text);text-decoration:none;transition:.3s;}
+    nav a:hover{color:var(--accent);}
+    .menu-btn{display:none;font-size:22px;background:none;border:0;color:var(--text);}
+    main{padding:60px 20px;}
+    section{margin-bottom:80px;}
+    h1,h2,h3{margin-bottom:16px;}
+    .hero{text-align:center;padding:100px 20px;}
+    .hero h1{font-size:48px;color:var(--accent);margin-bottom:12px;}
+    .hero p{color:#cfd8dc;margin-bottom:20px;}
+    .btn{display:inline-block;margin:6px;padding:12px 20px;border-radius:var(--radius);border:1px solid var(--accent);color:var(--accent);background:transparent;transition:.3s;}
+    .btn.primary{background:var(--accent);color:#002b36;border:0;}
+    .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.3s;}
+    .card:hover{transform:translateY(-4px);}
+    .skills .skill{margin:10px 0;}
+    .bar{background:rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;height:12px;}
+    .bar span{display:block;height:100%;background:var(--accent);}
+    .timeline{border-left:2px solid var(--accent);margin-left:20px;padding-left:20px;}
+    .timeline .item{margin-bottom:20px;position:relative;}
+    .timeline .item::before{content:"";position:absolute;left:-11px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);}
+    form{display:grid;gap:12px;max-width:500px;margin:auto;}
+    input,textarea{width:100%;padding:10px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.2);background:rgba(0,0,0,0.3);color:var(--text);}
+    button[type=submit]{cursor:pointer;}
+    footer{text-align:center;padding:20px;background:rgba(0,0,0,0.4);border-top:1px solid rgba(255,255,255,0.1);}
+    .socials a{margin:0 10px;color:var(--accent);text-decoration:none;}
     @media(max-width:640px){
-      nav { display:none; flex-direction:column; background:rgba(0,0,0,0.7); position:absolute; right:20px; top:60px; padding:10px; border-radius:var(--radius); }
-      nav.open { display:flex; }
-      .menu-btn { display:block; }
+      nav{display:none;flex-direction:column;gap:12px;background:rgba(0,0,0,0.8);position:absolute;right:20px;top:60px;padding:10px;border-radius:var(--radius);}
+      nav.open{display:flex;}
+      .menu-btn{display:block;}
+      .hero h1{font-size:34px;}
     }
-    @keyframes fadeIn {from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <div class="logo">yuan1877</div>
     <nav id="nav">
       <a href="#projects">项目</a>
-      <a href="#about">关于</a>
+      <a href="#skills">技能</a>
+      <a href="#timeline">经历</a>
       <a href="#contact">联系</a>
     </nav>
     <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
@@ -87,7 +65,7 @@
   <main>
     <section class="hero">
       <h1>你好，我是袁</h1>
-      <p>欢迎来到我的个人主页，这里记录折腾、分享项目与经验。</p>
+      <p>一个热爱折腾的开发者，专注自动化、运维和游戏相关项目。</p>
       <a class="btn primary" href="#projects">查看项目</a>
       <a class="btn" href="#contact">联系我</a>
     </section>
@@ -95,24 +73,27 @@
     <section id="projects">
       <h2>精选项目</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Docker 一键部署脚本</h3>
-          <p>自动安装依赖、拉取镜像、启动服务；支持国内源与离线包。</p>
-        </div>
-        <div class="card">
-          <h3>网络抓包与自动化工具</h3>
-          <p>基于 Python/Playwright 的自动化脚本集合，包含示例与模板。</p>
-        </div>
-        <div class="card">
-          <h3>RuoYi 部署最佳实践</h3>
-          <p>前后端分离部署、Nginx 反代、HTTPS 与多环境配置。</p>
-        </div>
+        <div class="card"><h3>Docker 一键部署脚本</h3><p>快速部署游戏后端，支持国内源与离线包。</p></div>
+        <div class="card"><h3>网络抓包与自动化工具</h3><p>基于 Python/Playwright，支持自定义脚本。</p></div>
+        <div class="card"><h3>RuoYi 部署最佳实践</h3><p>前后端分离部署、Nginx 配置与 HTTPS。</p></div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>关于我</h2>
-      <p>热爱自动化、网络、安全与游戏相关的工程实践，喜欢用脚本解决实际问题。</p>
+    <section id="skills" class="skills">
+      <h2>技能展示</h2>
+      <div class="skill"><strong>Python</strong><div class="bar"><span style="width:85%"></span></div></div>
+      <div class="skill"><strong>Docker & Linux</strong><div class="bar"><span style="width:80%"></span></div></div>
+      <div class="skill"><strong>Web 前端</strong><div class="bar"><span style="width:70%"></span></div></div>
+      <div class="skill"><strong>网络安全</strong><div class="bar"><span style="width:65%"></span></div></div>
+    </section>
+
+    <section id="timeline">
+      <h2>经历</h2>
+      <div class="timeline">
+        <div class="item"><h3>2023 - 至今</h3><p>研究游戏协议与自动化脚本，开发工具和辅助。</p></div>
+        <div class="item"><h3>2021 - 2023</h3><p>学习 Docker 部署、数据库运维与分布式应用。</p></div>
+        <div class="item"><h3>更早</h3><p>探索网络安全、逆向工程与小型网站开发。</p></div>
+      </div>
     </section>
 
     <section id="contact">
@@ -128,10 +109,15 @@
 
   <footer>
     <p>© <span id="year"></span> yuan1877 · 构建于 GitHub Pages</p>
+    <div class="socials">
+      <a href="https://github.com/yuan1877" target="_blank">GitHub</a>
+      <a href="#">WeChat</a>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent=new Date().getFullYear();
+    window.addEventListener("scroll",()=>{document.getElementById("header").classList.toggle("scrolled",window.scrollY>20)});
   </script>
 </body>
 </html>
